@@ -321,33 +321,33 @@ body .animationDesktopChoose {
     animation-fill-mode: forwards !important;
 }
 
-.before.startAnimation .Burkas {
-    right: -12.5vw;
+.before.startAnimation .Cottage {
+    right: -11.25vw;
+    transition: 1.6s ease;
+    animation: 1.6s animationScale ease !important;
+    animation-fill-mode: forwards !important;
+}
+.after.startAnimation .Burkas {
+    right: 37.5vw;
     transition: 1.6s ease;
     animation: 1.6s animationScale ease !important;
     animation-fill-mode: forwards !important;
 }
 
-.after.startAnimation .Cottage {
-    right: 38.75vw;
+
+.before.startAnimation .BIO_YOG {
+    right: -10.75vw;
+    transition: 1.6s ease;
+    animation: 1.6s animationScale ease !important;
+    animation-fill-mode: forwards !important;
+}
+.after.startAnimation .GO_YOPLAIT {
+    right: 38.55vw;
     transition: 1.6s ease;
     animation: 1.6s animationScale ease !important;
     animation-fill-mode: forwards !important;
 }
 
-.before.startAnimation .GO_YOPLAIT {
-    right: -11.45vw;
-    transition: 1.6s ease;
-    animation: 1.6s animationScale ease !important;
-    animation-fill-mode: forwards !important;
-}
-
-.after.startAnimation .BIO_YOG {
-    right: 39.25vw;
-    transition: 1.6s ease;
-    animation: 1.6s animationScale ease !important;
-    animation-fill-mode: forwards !important;
-}
 
 .before.startAnimation .Scandinavia {
     right: -9.5vw;
@@ -2713,7 +2713,7 @@ body.showNextButton .next {
 .zeitim {
     position: absolute;
     top: 7vw;
-    right: 42.2vw;
+    right: -3.8vw;
     width: 13vw;
 }
 
@@ -2727,7 +2727,7 @@ body.showNextButton .next {
 .vegetables {
     position: absolute;
     top: 30.5vw;
-    right: -9vw;
+    right: 35vw;
     width: 23vw;
 }
 
@@ -2741,7 +2741,7 @@ body.showNextButton .next {
 .Cottage {
     position: absolute;
     top: 11.5vw;
-    right: 12vw;
+    right: 14vw;
     width: 22.5vw;
     z-index: 1;
     transition: 0.2s ease;
@@ -2759,9 +2759,9 @@ body.showNextButton .next {
 
 .Pickled {
     position: absolute;
-    width: 17vw;
-    top: 7vw;
-    right: -6vw;
+    top: 4.5vw;
+    right: 39.5vw;
+    width: 16vw;
 }
 
 .mobile .Pickled {
@@ -2774,8 +2774,8 @@ body.showNextButton .next {
 .burekasim {
     position: absolute;
     width: 17vw;
-    top: 37.7vw;
-    right: 35vw;
+    top: 35.7vw;
+    right: -5vw;
 }
 
 .mobile .burekasim {
@@ -2789,7 +2789,7 @@ body.showNextButton .next {
     position: absolute;
     width: 25vw;
     top: 10.9vw;
-    right: 14.5vw;
+    right: 12.5vw;
     z-index: 1;
     transition: 0.2s ease;
     cursor: pointer;
@@ -2806,8 +2806,8 @@ body.showNextButton .next {
 
 .Banana {
     position: absolute;
-    top: 7vw;
-    right: -2.8vw;
+    top: 6vw;
+    right: 37.2vw;
     width: 16vw;
 }
 
@@ -2821,7 +2821,7 @@ body.showNextButton .next {
 .MOSLI {
     position: absolute;
     top: 29vw;
-    right: -11vw;
+    right: 25vw;
     width: 31vw;
 }
 
@@ -2835,7 +2835,7 @@ body.showNextButton .next {
 .BIO_YOG {
     position: absolute;
     top: 13vw;
-    right: 14.5vw;
+    right: 10.5vw;
     width: 21.5vw;
     z-index: 1;
     transition: 0.2s ease;
@@ -2854,8 +2854,8 @@ body.showNextButton .next {
 .Broccoli {
     position: absolute;
     width: 13vw;
-    top: 8vw;
-    right: 40.5vw;
+    top: 7vw;
+    right: -3vw;
 }
 
 .mobile .Broccoli {
@@ -2869,7 +2869,8 @@ body.showNextButton .next {
     position: absolute;
     width: 20.5vw;
     top: 36vw;
-    right: 33vw;
+    right: -6vw;
+    transform: scaleX(-1);
 }
 
 .mobile .SHAKE {
@@ -2877,6 +2878,7 @@ body.showNextButton .next {
     width: 34.5vw;
     top: 133vw;
     right: -9vw;
+    transform: inherit;
 }
 
 .GO_YOPLAIT {
@@ -3327,18 +3329,19 @@ body.showNextButton .next {
 }
 
 .bgBlue-5 {
-    top: 10.8vw;
-    right: 16.5vw;
-    width: 21vw;
-    height: 25.2vw;
+    top: 12.5vw;
+    right: 16vw;
+    width: 17.7vw;
+    height: 22.2vw;
+    border-radius: 12vw 12vw 20vw 20vw;
 }
 
 .bgBlue-55 {
-    top: 13vw;
-    right: 13.5vw;
-    width: 20.1vw;
-    height: 22vw;
-    border-radius: 5vw 5vw 11vw 11vw;
+    top: 12vw;
+    right: 15.5vw;
+    width: 18.9vw;
+    height: 24vw;
+    border-radius: 1vw 1vw 1vw 1vw;
 }
 
 .mobile .bgBlue-5 {
@@ -3349,18 +3352,18 @@ body.showNextButton .next {
 }
 
 .bgBlue-6 {
-    top: 13.3vw;
-    right: 16.2vw;
-    width: 18.1vw;
-    height: 23.2vw;
+    top: 13.5vw;
+    right: 13.3vw;
+    width: 16.1vw;
+    height: 22.6vw;
     border-radius: 2vw 2vw 5vw 5vw;
 }
 
 .bgBlue-66 {
-    top: 13.3vw;
-    right: 16.2vw;
-    width: 18.1vw;
-    height: 23.2vw;
+    top: 13.5vw;
+    right: 16.6vw;
+    width: 17.2vw;
+    height: 23.1vw;
     border-radius: 2vw 2vw 5vw 5vw;
 }
 
