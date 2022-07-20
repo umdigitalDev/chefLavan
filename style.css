@@ -124,7 +124,13 @@ label {
     margin-left: -10vw;
     margin-top: -5vw;
     z-index: 1;
+    /* animation: arrowMoveMiddle 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95); */
 }
+/* @keyframes arrowMoveMiddle{
+    50% {
+        transform: translateX(1vw);
+    }
+} */
 
 .HoverSlide {
     position: absolute;
@@ -529,6 +535,19 @@ body .animationDesktopChoose {
     background-size: 11vw;
     background-repeat: no-repeat;
     transform: translate(-50%, -50%);
+    animation: arrowMoveMiddle 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-fill-mode: forwards;
+}
+@keyframes arrowMoveMiddle{
+    0% {
+        transform: translate(-55%,-50%);
+    }
+    50% {
+        transform: translate(-45%,-50%);
+    }
+    100% {
+        transform: translate(-55%,-50%);
+    }
 }
 
 .move2.noAnimation {
@@ -1113,6 +1132,7 @@ body.showNextButton .next {
     letter-spacing: 0.1vw;
     font-weight: 700;
     position: relative;
+    animation: none;
 }
 
 .next.enableClick .wrapperNext p {
@@ -2060,7 +2080,7 @@ body.showNextButton .next {
 }
 
 .mainLogoQuestion img {
-    width: 7.4vw;
+    width: 9.4vw;
 }
 
 .mobile .mainLogoQuestion img {
@@ -2168,6 +2188,63 @@ body.showNextButton .next {
     background-color: #fff;
 }
 
+.container .leftC.animationPlay {
+    animation: hoverProductLetf2 1.2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hoverProductLetf2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-3deg);
+    }
+    22.5% {
+        transform: rotate(-2deg);
+    }
+    35% {
+        transform: rotate(-3deg);
+    }
+    47.5% {
+        transform: rotate(-2.5deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container .rightC.animationPlay {
+    animation: hoverProductRight2 1.2s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes hoverProductRight2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(3deg);
+    }
+    22.5% {
+        transform: rotate(2deg);
+    }
+    35% {
+        transform: rotate(3deg);
+    }
+    47.5% {
+        transform: rotate(2.5deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .container.clickLeftHoverShow .leftC,
 .container.leftHoverShow .leftC {
     animation: hoverProductLetf 0.6s ease;
@@ -2184,10 +2261,10 @@ body.showNextButton .next {
 .container.clickRightHoverShow .contTextBetwwen,
 .container.leftHoverShow .contTextBetwwen,
 .container.clickLeftHoverShow .contTextBetwwen,
-.container.rightHoverShow .contText1,
-.container.clickRightHoverShow .contText1,
-.container.leftHoverShow .contText2,
-.container.clickLeftHoverShow .contText2 {
+.container.rightHoverShow .contText2,
+.container.clickRightHoverShow .contText2,
+.container.leftHoverShow .contText1,
+.container.clickLeftHoverShow .contText1 {
     filter: blur(3px);
 }
 
@@ -2915,7 +2992,8 @@ body.showNextButton .next {
 
 .contentText {
     position: absolute;
-    top: 13vw;
+    top: 6vw;
+    /* top: 13vw; */
     right: 32.5vw;
     width: 35vw;
     z-index: 2;
@@ -2998,9 +3076,8 @@ body.showNextButton .next {
     height: 100vh;
     top: calc(100vh/2*-1);
     right: 9.5vw;
-    background-image: linear-gradient(to top, #22A864, #fff0)
+    background-image: linear-gradient(to top, #22A864, #fff0);
 }
-
 .contentText p {
     font-size: 2.6vw;
     color: #fff;
@@ -3046,7 +3123,7 @@ body.showNextButton .next {
 .mobile .form {
     position: absolute;
     width: 100%;
-    height: 210vw;
+    height: 215vw;
     background: #fff;
     z-index: 3;
     overflow: hidden;

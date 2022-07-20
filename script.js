@@ -24,12 +24,48 @@ $(document).ready(function() {
     animationFrontPage();
     form();
     desktopHover();
+    customer();
 });
+////////////////////////////////
+// Animation Front Page
+///////////////////////////////
+function customer() {
+    var customer = getUrlParameter('customer');
+    if (customer){
+        $('body').addClass('customerChefLavanExist');
+    }
+
+    if ($('body').hasClass('customerChefLavanExist')){
+        $('.send-btn.send-btn1 .txt-send-button').text('נתראה במייל');
+    }else{
+        $('.send-btn.send-btn1 .txt-send-button').text('עוד רגע סיימנו');
+    }
+}
 ////////////////////////////////
 // Animation Front Page
 ///////////////////////////////
 function desktopHover() {
     if (!$('body').hasClass('mobile')) {
+
+        if (!$('.container').hasClass('rightHoverShow') ||
+            !$('.container').hasClass('leftHoverShow')||
+            !$('.container').hasClass('clickRightHoverShow')||
+            !$('.container').hasClass('clickLeftHoverShow')
+            ){
+
+                setInterval(() => {
+                    $('.leftC').addClass('animationPlay');
+                    setTimeout(() => {
+                        $('.leftC').removeClass('animationPlay');
+                    }, 2000);
+                    setTimeout(() => {
+                        $('.rightC').addClass('animationPlay');
+                        setTimeout(() => {
+                            $('.rightC').removeClass('animationPlay');
+                        }, 2000);
+                    }, 3000);
+                }, 7000);
+            }
 
         $('.leftC').hover(function() {
             $(this).closest('.container').addClass('leftHoverShow');
@@ -129,17 +165,6 @@ function form() {
         });
     }
 
-    $(".send-btn1").click(function(e) {
-        // console.log('11111');
-        $('.contentTextForm2').fadeIn();
-        $('.costumerNotExist').fadeIn();
-        $('.customerExist').hide();
-        $('.wrapperNumberQuetion').hide();
-        $('.back2').hide();
-        $('.back3').css('display','flex');
-        $('.bgDesktopForm1').fadeOut();
-        $('.bgDesktopForm2').fadeIn();
-    });
 
     //Move placeholders up
     $("input").focus(function(e) {
@@ -307,7 +332,73 @@ function form() {
         }
     });
 
+    $(".send-btn1").click(function(e) {
+        
+        if ($('body').hasClass('customerChefLavanExist')){
+            var getTheUrl = document.location.href;
 
+            var Interest_1 = $('.container-first').data('answer');
+            var Interest_2 = $('.container-second').data('answer');
+            var Interest_3 = $('.container-three').data('answer');
+            var Interest_4 = $('.container-four').data('answer');
+            var Interest_5 = $('.container-five').data('answer');
+            var Interest_6 = $('.container-six').data('answer');
+            var Interest_7 = $('.container-seven').data('answer');
+            var Difficulty = $('#cook').val();
+            var Difficulty2 = $('#cook2').val();
+            var Difficulty3 = $('#cook3').val();
+    
+            var email = getUrlParameter('email');
+            var ContactKey = 'tn_' + email;
+    
+            const dateCreate = new Date();
+            const date = dateCreate.toLocaleTimeString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }).replace(',', "");
+            var Created_Date = date;
+            var url = `${getTheUrl}/includes/`;
+    
+            var data2 = {
+                Interest_1: Interest_1,
+                Interest_2: Interest_2,
+                Interest_3: Interest_3,
+                Interest_4: Interest_4,
+                Interest_5: Interest_5,
+                Interest_6: Interest_6,
+                Interest_7: Interest_7,
+                email: email,
+                Created_Date: Created_Date,
+                ContactKey: ContactKey,
+                Difficulty: Difficulty,
+                Difficulty2: Difficulty2,
+                Difficulty3: Difficulty3
+            };
+    
+            // console.log(data2);
+    
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data2,
+                error: function(request, error) {
+                    console.log(request);
+                    console.log(error);
+                    alert("לצערנו ישנה שגיאה בשליחת הטופס");
+                },
+                success: function(data) {
+                    console.log(data);
+                    $(".tnx").fadeIn();
+                }
+            });
+        }else{   
+            $('.contentTextForm2').fadeIn();
+            $('.costumerNotExist').fadeIn();
+            $('.customerExist').hide();
+            $('.wrapperNumberQuetion').hide();
+            $('.back2').hide();
+            $('.back3').css('display','flex');
+            $('.bgDesktopForm1').fadeOut();
+            $('.bgDesktopForm2').fadeIn();
+        }
+    });
 
     $(".send-btn2").click(function(e) {
         e.preventDefault();
@@ -486,7 +577,7 @@ function animationFrontPage() {
                     $('.after').removeClass('startAnimation rotateY');
                     $('.before').removeClass('startAnimation rotateY');
                     $('.animationDesktopChoose').removeClass('startAnimationLeft startAnimationRight');
-                }, 2000);
+                }, 2500);
             }
         }
 

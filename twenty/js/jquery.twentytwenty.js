@@ -84,7 +84,7 @@
                     container.find('.twentytwenty-handle').addClass("noAnimation");
                     container.find(".blueOne")[0].style.opacity = '1';
                     container.find('.rotateOne')[0].style.transform = 'rotate(2.4deg)';
-                    container.closest('.container').find(".contText2")[0].style.filter = 'blur(3px)';
+                    container.closest('.container').find(".contText1")[0].style.filter = 'blur(3px)';
                     container.closest('.container').find(".contTextBetwwen")[0].style.filter = 'blur(3px)';
                     var answer = container.find(".wrapper-one").data('answ');
                     container.closest('.container').attr('data-answer', answer);
@@ -96,7 +96,7 @@
                     container.find('.twentytwenty-handle').addClass("noAnimation");
                     container.find(".blueTwo")[0].style.opacity = '1';
                     container.find('.rotateTwo')[0].style.transform = 'rotate(-2.4deg)';
-                    container.closest('.container').find(".contText1")[0].style.filter = 'blur(3px)';
+                    container.closest('.container').find(".contText2")[0].style.filter = 'blur(3px)';
                     container.closest('.container').find(".contTextBetwwen")[0].style.filter = 'blur(3px)';
                     var answer = container.find(".wrapper-two").data('answ');
                     container.closest('.container').attr('data-answer', answer);
@@ -175,6 +175,9 @@
                     beforeImg.css("clip", "rect(0," + offsetWRight + "px," + offset.h + ",0)");
                     afterImg.css("clip", "rect(0," + offset.w + "," + offset.h + "," + offsetWRight + "px)");
                     container.find('.twentytwenty-handle').css("left", offsetWRight + "px");
+                    var answer = container.find(".wrapper-one").data('answ');
+                    container.closest('.container').attr('data-answer', answer);
+                    container.closest('.container').find('.move2').css('animation', 'none');
                 } else if (precent < 0.5) {
                     beforeImg.css("transition", "0.2s ease");
                     afterImg.css("transition", "0.2s ease");
@@ -182,6 +185,9 @@
                     beforeImg.css("clip", "rect(0,15px," + offset.h + ",0)");
                     afterImg.css("clip", "rect(0," + offset.w + "," + offset.h + ",15px)");
                     container.find('.twentytwenty-handle').css("left", "15px");
+                    var answer = container.find(".wrapper-two").data('answ');
+                    container.closest('.container').attr('data-answer', answer);
+                    container.closest('.container').find('.move2').css('animation', 'none');
                 }
             };
 
