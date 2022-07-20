@@ -784,6 +784,7 @@ body.showNextButton .next {
     animation: 0.6s showNextButton ease;
     animation-fill-mode: forwards;
     opacity: 0;
+    display: flex;
 }
 
 @keyframes showNextButton {
@@ -914,6 +915,7 @@ body.showNextButton .next {
     animation: next 0.6s ease-in-out;
     animation-fill-mode: forwards;
     transform: translateX(0);
+    display: none;
 }
 
 .mobile.frontSlideOut .next {
@@ -3174,6 +3176,7 @@ body.showNextButton .next {
     top: 18vw;
     right: 74vw;
     width: 40.5vw;
+    transition: 0.3s ease;
 }
 
 .mobile .formThanks {
@@ -3717,6 +3720,7 @@ input {
     top: 18.5vw;
     right: 67vw;
     width: 47vw;
+    transition: 0.3s ease;
 }
 
 .mobile .strawbery {
@@ -4046,6 +4050,7 @@ input {
     top: -4vw;
     right: 80vw;
     width: 28.5vw;
+    transition: 0.3s ease;
 }
 
 .mobile .fruitsThanks {
@@ -4060,6 +4065,7 @@ input {
     top: 15.3vw;
     right: -11vw;
     width: 19vw;
+    transition: 0.3s ease;
 }
 
 .mobile .chs1 {
@@ -4074,6 +4080,7 @@ input {
     top: 28vw;
     right: -12vw;
     width: 26.5vw;
+    transition: 0.3s ease;
 }
 
 .mobile .chs2 {
@@ -4088,6 +4095,7 @@ input {
     top: 37.5vw;
     right: -3vw;
     width: 19.5vw;
+    transition: 0.3s ease;
 }
 
 .mobile .chs3 {

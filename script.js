@@ -25,9 +25,32 @@ $(document).ready(function() {
     form();
     desktopHover();
     customer();
+    moveImage();
 });
 ////////////////////////////////
-// Animation Front Page
+// Move Image
+///////////////////////////////
+function moveImage() {
+    if (!$('body').hasClass('mobile')) {
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("body").mousemove(function(e){
+          var pageX = e.pageX - ($(window).width() / 2);
+          var pageY = e.pageY - ($(window).height() / 2);
+          var newvalueX = width * pageX * -1 - 25;
+          var newvalueY = height * pageY * -1 + 50;
+          $('.strawbery').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+          $('.formThanks').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+          $('.fruitsThanks').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+          $('.chs1').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+          $('.chs2').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+          $('.chs3').css("transform", "translate("+newvalueX+"px, "+newvalueY+"px)");
+        });
+    }
+}
+////////////////////////////////
+// Customer
 ///////////////////////////////
 function customer() {
     var customer = getUrlParameter('customer');
